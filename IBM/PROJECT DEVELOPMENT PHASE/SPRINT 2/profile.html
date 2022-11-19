@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='reg_style.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+</head>
+
+<body><div>
+    <nav class="navtop">
+        <div>
+            <h1>Website Title</h1>
+            <a href="{{ url_for('Main') }}"><i class="fas fa-home"></i>Home</a>
+            <a href="{{ url_for('profile') }}"><i class="fas fa-user-circle"></i>Profile</a>
+            <a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+        </div>
+    </nav>
+</div>
+    <div class="content">
+        <h2>Profile Page</h2>
+        <div>
+            <p>Your account details are below:</p>
+            <table>
+                <tr>
+                    <td>Username:</td>
+                    <td>{{ account['username'] }}</td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td>{{ account['password'] }}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>{{ account['email'] }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
