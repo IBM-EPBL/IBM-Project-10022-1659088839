@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='reg_style.css') }}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+<style>
+	#output-image{
+		size: 100px;;
+	}
+</style>
+
+</head>
+
+<body class="loggedin">
+	<nav class="navtop">
+		<div>
+			<h1>Website Title</h1>
+			<a href="{{ url_for('Main') }}"><i class="fas fa-home"></i>Home</a>
+			<a href="{{ url_for('profile') }}"><i class="fas fa-user-circle"></i>Profile</a>
+			<a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+		</div>
+	</nav>
+	<div class="split left">
+		<div class="centered">
+			<img src="{{ url_for('static', filename='Animated_img.jpg') }}">
+		</div>
+	</div>
+	<form method=post enctype=multipart/form-data>
+		<div class="split right">
+			<div class="centered">
+				<h2 class="h4 mb-3 font-weight-normal">Upload Your Image</h2>
+				<input type="file" name="file" class="form-control-file" id="inputfile" onchange="preview_image(event)"
+					style="font-weight: bold;">
+				<br>
+				<br>
+				<img id="output-image" />
+				<div class="Submit_button">
+					<a href="{{url_for('predict')}}"><button class="button3">PREDICT</button></a>
+				</div>
+				<!---<div>
+				<label for="images" class="drop-container">
+					<input type="file"  name="file" onchange="preview_image(event)" accept="image/*" required>
+					<img id="output-image" class="rounded mx-auto d-block" />
+				</label>
+			</div>
+			--->
+	</form>
+
+	</div>
+	</div>
+	<script type="text/javascript">
+		function preview_image(event) {
+			var reader = new FileReader();
+			reader.onload = function () {
+				var output = document.getElementById('output-image')
+				output.src = reader.result;
+			}
+			reader.readAsDataURL(event.target.files[0]);
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+            function openPopup() {
+                document.getElementById("boxPopup").style.display = "block";
+        }
+
+            function closePopup() {
+                document.getElementById("boxPopup").style.display = "none";
+        }
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+            var modal = document.getElementById('boxPopup');
+            if (event.target == modal) {
+                closePopup();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <p style="align-content: center">
+        <A style="align-content: center" HREF="newpopup.html" onClick="return popup(this, 'stevie')">my popup</A><br>
+    </p>
+    <p>
+        <input type="button" onclick="popup(this, 'about') " value="CLICK HERE">
+    </p>
+</body>
+
+</html>

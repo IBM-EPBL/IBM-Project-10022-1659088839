@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer Recommendation System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+
+<body>
+    <div>
+        <ul id="navbar">
+            <li><a href="{{ url_for('home') }}"><span>HOME</span> </a> </li>
+            <a href="{{url_for('login')}}"><button class="button1">LOGIN</button></a>
+            <a href="{{url_for('register')}}"><button class="button1">REGISTER</button></a>
+        </ul>
+
+    </div>
+
+
+
+
+    <div class="section c-store-home-wrap">
+        <div class="intro-header">
+            <div class="intro-content cc-homepage">
+                <div class="intro-text">
+                    <div class="heading-jumbo">Fertilizer<br> Recommendation<br>System</div>
+                    <div class="text2">"Weeds are Flowers too, when you get to know them" </div>
+                    <a href="/about" class="button2">
+                        <div>Learn More</div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+</body>
+
+</html>
